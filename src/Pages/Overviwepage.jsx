@@ -3,6 +3,8 @@ import { BarChart2, ShoppingBag,Fuel, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from '../Components/Common/Header'
 import StatCard from '../Components/Common/StatCard'
+import RealTimeLineChart from '../Components/Overviwe/RealTimeLineChart'
+import TimeBasePiechart from '../Components/Overviwe/TimeBasePiechart'
 
 const Overviwepage = () => {
   return (
@@ -21,6 +23,14 @@ const Overviwepage = () => {
 					<StatCard name='This Month Production' icon={ShoppingBag} value='5672M' color='#EC4899' />
 					<StatCard name='Efficency of Machine' icon={BarChart2} value='62.2%' color='#10B981' />
 				</motion.div>
+
+		{/* CHARTS */}
+
+		
+		<div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+				<RealTimeLineChart/>
+				<TimeBasePiechart/>
+				</div>
 
       </main>
       </div>
