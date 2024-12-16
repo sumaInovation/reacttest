@@ -8,12 +8,17 @@ import Disributepiechar from '../Components/Overviwe/Disributepiechar'
 import { useWebSocket } from '../Components/Common/WebSocketContext';
 
 const Overviwepage = () => {
+	const[IsMachineRun,setIsMachineRun]=useState(false);
 	const [todatproduction, setTodayproduction] = useState(0);
 	const { messages } = useWebSocket();
-	const { current_breaking_time } = messages;
+	const { current_breaking_time,current_running_time } = messages;
 	useEffect(() => {
 		if (current_breaking_time != undefined) {
-			setTodayproduction(current_breaking_time)
+			setTodayproduction(current_breaking_time);
+			setIsMachineRun(false)
+		}
+		if(current_running_time!=undefined){
+			setIsMachineRun(true);
 		}
 
 
@@ -31,7 +36,7 @@ const Overviwepage = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
 				>
-					<StatCard name='Machine State' icon={Fuel} value='Stop' color='#6366F1' />
+					<StatCard name='Machine State' icon={Fuel} value={IsMachineRun==true?"Running":"Stop"} color={IsMachineRun==true?"#3f8f29":"#de1a24"} />
 					<StatCard name='Today Production' icon={Target} value={todatproduction} color='#8B5CF6' />
 					<StatCard name='This Month Production' icon={ShoppingBag} value='5672M' color='#EC4899' />
 					<StatCard name='Efficency of Machine' icon={BarChart2} value='62.2%' color='#10B981' />

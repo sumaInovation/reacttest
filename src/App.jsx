@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Overviwepage from "./Pages/Overviwepage";
 import Productpage from "./Pages/Productpage";
 import Sidebar from "./Components/Common/Sidebar";
+import Analytics from "./Pages/Analytics"
 
 function App() {
     return (
@@ -21,6 +22,8 @@ function App() {
      
         <Route  path="/" element={<Overviwepage/>}/>
         <Route path="/product" element={<Productpage/>}/>
+        <Route path="/analytics" element={<Analytics/>}/>
+
         
       </Routes>
       </div>

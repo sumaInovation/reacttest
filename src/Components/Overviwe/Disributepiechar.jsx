@@ -41,9 +41,9 @@ const Disributepiechar = () => {
 
 		const interval = setInterval(() => {
 			setUerData([
-			{ name: 'RunTime', value:(runttime+currentrun)/60000 },
-			{ name: 'DownTime', value:(currentdown+currentdown)/6000},
-			{ name: 'Remaning', value: (1440-((runttime+currentrun)/60000+(currentdown+currentdown)/6000))}
+			{ name: 'RunTime', value:(runttime+currentrun) },
+			{ name: 'DownTime', value:(currentdown+currentdown)},
+			{ name: 'Remaning', value: 500}
 		])
 		}, 2000)
 		return () => clearInterval(interval); // Cleanup on component unmount
