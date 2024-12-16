@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Header from '../Components/Common/Header'
 import StatCard from '../Components/Common/StatCard'
 import RealTimeLineChart from '../Components/Overviwe/RealTimeLineChart'
-import TimeBasePiechart from '../Components/Overviwe/TimeBasePiechart'
+
 
 const Overviwepage = () => {
   return (
@@ -29,7 +29,7 @@ const Overviwepage = () => {
 		
 		<div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
 				<RealTimeLineChart/>
-				<TimeBasePiechart/>
+			
 				</div>
 
       </main>
