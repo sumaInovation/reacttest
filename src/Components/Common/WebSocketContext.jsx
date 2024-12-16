@@ -7,6 +7,9 @@ const WebSocketContext = createContext();
 export const WebSocketProvider = ({ children }) => {
   const [wsClient, setWsClient] = useState(null); // WebSocket client
   const [messages, setMessages] = useState([]); // Messages received from WebSocket
+  
+  //Websocket comming parameters
+
 
   // Create WebSocket client and handle events
   useEffect(() => {
@@ -21,11 +24,13 @@ export const WebSocketProvider = ({ children }) => {
     socket.onmessage = (event) => {
       try {
         const message = JSON.parse(event.data);
+
         setMessages(message); // Append new message
+        
       } catch (error) {
-        console.log("Error:",error);
+        console.log("Error:", error);
       }
-    
+
     };
 
     // Event listener for WebSocket errors
