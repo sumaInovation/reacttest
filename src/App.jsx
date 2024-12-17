@@ -4,6 +4,8 @@ import Overviwepage from "./Pages/Overviwepage";
 import Productpage from "./Pages/Productpage";
 import Sidebar from "./Components/Common/Sidebar";
 import Analytics from "./Pages/Analytics"
+import Header from "./Components/Common/Header";
+import { Menu } from "lucide-react";
 
 function App() {
     return (
@@ -11,12 +13,20 @@ function App() {
        
        
      <BrowserRouter>
-     <div className='flex h-screen bg-gray-900 text-gray-100   overflow-hidden'>
-      {/* BG */}
-      <div className=" fixed  inset-0 z-0">
-        <div className="  absolute inset-0 bg-gradient-to-br  from-gray-900  to-gray-900 opacity-80"/>
-        <div className=" absolute  inset-0  backdrop-blur-sm"/>
+    
+     <div className=' h-screen bg-gray-900 text-gray-100   overflow-hidden'>
+     
+     <div className="text-2xl font-semibold text-gray-100 border-2
+      border-gray-500 rounded-sm p-5 pl-10 flex  justify-between ">
+        <p>
+        PPT Inovation
+          </p>
+      <Menu className="lg:hidden"/>
       </div>
+      {/* BG */}
+      <div  className=" flex overflow-hidden h-screen">
+        
+       
       <Sidebar/>
       <Routes>
      
@@ -27,8 +37,10 @@ function App() {
         
       </Routes>
       </div>
-      
+      <p className="text-2xl font-semibold text-gray-100 border-2 border-gray-500 rounded-sm p-5">PPT Inovation</p>
+      </div>
       </BrowserRouter>
+      
       
       </>
     );
