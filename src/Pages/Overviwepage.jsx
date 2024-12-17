@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BarChart2, ShoppingBag, Fuel, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import Header from '../Components/Common/Header'
+
 import StatCard from '../Components/Common/StatCard'
 import RealTimeLineChart from '../Components/Overviwe/RealTimeLineChart'
 import Disributepiechar from '../Components/Overviwe/Disributepiechar'
@@ -26,9 +26,9 @@ const Overviwepage = () => {
 
 	}, [messages])
 	return (
-		<div className='flex-1 overflow-auto relative z-10'>
-			<Header title='PPT Cable Production' />
-			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
+		<div className='flex-1 overflow-auto relative z-10 w-full'>
+			
+			<main className=' mx-auto py-6 px-4 lg:px-8'>
 				{/* STATS */}
 				<motion.div
 					className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8'
