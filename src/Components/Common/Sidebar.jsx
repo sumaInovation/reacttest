@@ -20,8 +20,9 @@ const Sidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     return (
+        <div className=" hidden lg:block">
         <motion.div
-            className={`  hidden lg:block  relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${isSidebarOpen ? "w-64" : "w-20"
+            className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${isSidebarOpen ? "w-64" : "w-20"
                 }`}
             animate={{ width: isSidebarOpen ? 256 : 80 }}
         >
@@ -83,6 +84,7 @@ const Sidebar = () => {
                 </nav>
             </div>
         </motion.div>
+        </div>
     );
 };
 export default Sidebar;
